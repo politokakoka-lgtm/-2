@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Закрытый раздел</title>
+<style>
+:root{--bg:#e8e2d3;--card:#f7f3e8;--ink:#1a1712;--mute:#6b6456;--red:#b3261e;--btn-ink:#f7f3e8;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--card:#201d17;--ink:#efe9da;--mute:#a39b88;--red:#ff5a4d;--btn-ink:#15130f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15130f;--card:#201d17;--ink:#efe9da;--mute:#a39b88;--red:#ff5a4d;--btn-ink:#15130f;color-scheme:dark}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+body{min-height:100vh;display:grid;place-items:center;padding:20px}
+#card{width:100%;max-width:420px;background:var(--card);border:2px solid var(--ink);padding:30px 26px;position:relative;overflow:hidden}
+.stamp{display:inline-block;font:900 22px Impact,"Arial Black",sans-serif;color:var(--red);border:3px solid var(--red);padding:2px 12px;transform:rotate(-5deg);margin-bottom:18px;letter-spacing:.04em}
+h1{font-size:30px;line-height:1.1;margin:0 0 10px}
+p{margin:0 0 18px;color:var(--mute);line-height:1.5}
+input{width:100%;font:inherit;font-size:18px;padding:12px 14px;border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:0;margin-bottom:12px}
+input:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+button{width:100%;font:700 17px Georgia,serif;padding:14px;border:2px solid var(--ink);background:var(--ink);color:var(--btn-ink);cursor:pointer;border-radius:0}
+#err{color:var(--red);min-height:1.4em;margin:10px 0 0;font-weight:700}
+.role{font-size:16px;color:var(--mute);margin:0 0 6px}
+.name{font:900 clamp(26px,9vw,38px)/1.1 Georgia,serif;word-break:break-all;margin:0 0 26px}
+#num{margin-top:18px;padding:16px;border:2px dashed var(--red)}
+#num span{display:block;color:var(--mute);margin-bottom:4px}
+#num a{color:var(--red);font:900 26px Georgia,serif;text-decoration:none}
+.alt{margin-top:10px;background:transparent;color:var(--ink)}
+#info{margin-top:12px;padding:16px;border:2px solid var(--ink)}#info b{display:block;margin-bottom:6px}#info p{margin:0;color:var(--ink)}#info p+p{margin-top:10px}
+#quiz{margin-top:12px;padding:16px;border:2px solid var(--red)}#quiz span{display:block;color:var(--mute);margin-bottom:6px}#quiz b{display:block;font-size:18px;line-height:1.3;margin-bottom:6px}.opt{text-align:left;font-weight:400}button:disabled{opacity:.5;cursor:not-allowed}#ql{display:block;margin-top:14px;color:var(--red);font-weight:700;font-size:18px}
+#tg{margin-top:12px;padding:16px;border:2px dashed var(--red)}#tg span{display:block;color:var(--mute);margin-bottom:4px}#tg a{color:var(--red);font:900 24px Georgia,serif;text-decoration:none}
+.shake{animation:sh .4s}
+@keyframes sh{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+@media (prefers-reduced-motion:reduce){.shake{animation:none}}
+</style></head><body>
+<main id="card">
+<section id="lock">
+<div class="stamp">ДОСТУП ЗАКРЫТ</div>
+<h1>Закрытый раздел</h1>
+<p>Введи пароль, чтобы открыть страницу.</p>
+<input id="pw" type="password" placeholder="Пароль" autocomplete="off" autocapitalize="off" aria-label="Пароль">
+<button id="in">Войти</button>
+<p id="err" role="alert"></p>
+</section>
+<section id="nk" hidden>
+<div class="stamp">ПОЧТИ ГОТОВО</div>
+<h1>Как тебя зовут?</h1>
+<p>Введи свой ник на сервере. Он запомнится и будет в сообщениях, которые ты отправишь мне.</p>
+<input id="nin" placeholder="Ник" maxlength="32" autocomplete="off" aria-label="Ник">
+<button id="nok">Продолжить</button>
+</section>
+<section id="bn" hidden>
+<div class="stamp">ДОСТУП ЗАКРЫТ</div>
+<h1>Ты в чёрном списке</h1>
+<p>Для тебя эта страница закрыта.</p>
+</section>
+<section id="doc" hidden>
+<div class="stamp">СЕКРЕТНО</div>
+<p class="role">Глава партии фашистов</p>
+<div class="name">lockedyew033164</div>
+<button id="wr">Написать ему</button>
+<div id="num" hidden><span>Номер телефона</span><a href="tel:+380982019850">+380982019850</a></div>
+<button id="jn" class="alt">Попроситься в партию</button>
+<div id="tg" hidden><span>Telegram — нажми, чтобы написать</span><a id="tga" target="_blank" rel="noopener" href="#">@SuperGleb2</a></div>
+<button id="ab" class="alt">О партии</button>
+<div id="info" hidden><b>О нашей партии</b><p>Партия фашистов — это организация на нашем сервере. Мы хотим расширяться на другие проекты, например Политмайн и Time to Play.</p><p>Кстати, на сервере Time to Play, на втором режиме, у нас есть город Glebovka. Им правит lockedyew033164 (мой твинк).</p><p>Если хотите к нам, пишите мне или заходите на Time to Play, на второй полит, и проситесь в город Glebovka.</p><p>Удачной игры в нашей партии!</p></div>
+<button id="adm" class="alt">Стать админом партии</button>
+<div id="quiz" hidden><div id="qbox"><span id="qn"></span><b id="qq"></b><div id="qa"></div></div><div id="qr" hidden><b id="qt"></b><a id="ql" target="_blank" rel="noopener" href="#">Написать @SuperGleb2</a><button id="qre" class="alt">Пройти ещё раз</button></div></div>
+</section>
+</main>
+<script>
+const $=i=>document.getElementById(i);
+const show=()=>{$('lock').hidden=true;$('doc').hidden=false};
+const BL=[];
+const nickOf=()=>{try{return localStorage.getItem('gut_nick')||''}catch(e){return ''}};
+const banned=n=>BL.includes(n.trim().toLowerCase());
+function block(){['lock','nk','doc'].forEach(i=>$(i).hidden=true);$('bn').hidden=false}
+function afterPw(){const n=nickOf();if(!n){$('lock').hidden=true;$('nk').hidden=false}else if(banned(n))block();else show()}
+function saveNick(){const n=$('nin').value.trim();if(!n)return;try{localStorage.setItem('gut_nick',n)}catch(e){}$('nk').hidden=true;banned(n)?block():show()}
+$('nok').onclick=saveNick;$('nin').onkeydown=e=>{if(e.key==='Enter')saveNick()};
+try{if(localStorage.getItem('gut_ok')==='1')afterPw()}catch(e){}
+function enter(){
+  if($('pw').value.trim().toLowerCase()==='gut'){try{localStorage.setItem('gut_ok','1')}catch(e){}afterPw()}
+  else{$('err').textContent='Неверный пароль';$('pw').value='';const c=$('card');c.classList.remove('shake');void c.offsetWidth;c.classList.add('shake')}
+}
+$('in').onclick=enter;
+$('pw').onkeydown=e=>{if(e.key==='Enter')enter()};
+$('wr').onclick=()=>{$('wr').hidden=true;$('num').hidden=false};
+$('jn').onclick=()=>{$('jn').hidden=true;$('tga').href='https://t.me/SuperGleb2?text='+encodeURIComponent('Я хочу к вам в партию. Мой ник: '+nickOf());$('tg').hidden=false};
+$('ab').onclick=()=>{$('info').hidden=!$('info').hidden};
+const QZ=[
+{q:'Как называется город партии?',a:['Glebovka','Gleboville','Fashistburg','Lockedgrad'],c:0},
+{q:'Кто правит городом Glebovka?',a:['SuperGleb1','lockedyew033164','Gleb2000','Никто'],c:1},
+{q:'На каком сервере находится город?',a:['Hypixel','Mineland','Time to Play','Другой сервер'],c:2},
+{q:'На каком режиме сервера этот город?',a:['На первом','На третьем','На втором','На всех сразу'],c:2},
+{q:'Чего хочет партия?',a:['Закрыться','Продать город','Уйти с сервера','Расширяться на другие проекты'],c:3},
+{q:'Сколько вы находитесь в нашей организации?',a:['1 час','10 часов','Больше 1 дня'],c:2},
+{q:'Кто олд в нашей партии?',a:['coke','Сам я','Да я не знаю, кто у вас олд'],c:0}];
+let qi=0,sc=0,an=[];
+const SCORED=QZ.filter(q=>q.c!=null).length;
+function ask(){const q=QZ[qi],box=$('qa');$('qn').textContent='Вопрос '+(qi+1)+' из '+QZ.length;$('qq').textContent=q.q;box.innerHTML='';
+ q.a.forEach((t,i)=>{const x=document.createElement('button');x.className='alt opt';x.textContent=t;x.onclick=()=>{if(i===q.c)sc++;an.push(t);qi++;qi<QZ.length?ask():fin()};box.appendChild(x)})}
+function fin(){const ok=sc===SCORED;$('qbox').hidden=true;$('qr').hidden=false;
+ $('qt').textContent=ok?'Ты прошёл: '+sc+' из '+SCORED+'. Напиши мне, чтобы стать админом.':'Ты завалил тест ('+sc+' из '+SCORED+'). Теперь 10 дней ты не можешь пройти его заново.';
+ $('ql').hidden=!ok;$('qre').hidden=true;if(!ok)lockSet();
+ if(ok)$('ql').href='https://t.me/SuperGleb2?text='+encodeURIComponent('Я прошёл викторину ('+sc+' из '+SCORED+') и хочу стать админом партии. Время в организации: '+an[5]+'; олд: '+an[6]+'; ник: '+nickOf())}
+const LK='quiz_lock',DAY=864e5;
+function lockLeft(){try{return +localStorage.getItem(LK)-Date.now()}catch(e){return 0}}
+function lockUI(){const l=lockLeft();$('adm').disabled=l>0;$('adm').textContent=l>0?'Тест заблокирован ещё на '+Math.ceil(l/DAY)+' дн.':'Стать админом партии'}
+function lockSet(){try{localStorage.setItem(LK,String(Date.now()+10*DAY))}catch(e){}lockUI()}
+function startQ(){qi=0;sc=0;an=[];$('qbox').hidden=false;$('qr').hidden=true;ask()}
+$('adm').onclick=()=>{const q=$('quiz');if(q.hidden){q.hidden=false;startQ()}else q.hidden=true};
+$('qre').onclick=startQ;
+lockUI();
+</script></body></html>
